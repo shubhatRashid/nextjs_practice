@@ -1,6 +1,6 @@
 export const metadata = {
   title : 'about',
-  description:'app router in nextjs'
+  description : 'about'
 }
 export default function About()  {
   return (
