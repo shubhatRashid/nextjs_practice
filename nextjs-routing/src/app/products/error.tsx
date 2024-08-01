@@ -1,8 +1,8 @@
 'use client'
-const error = () => {
+const errorBoundry = ({error}:{error:Error}) => {
   return (
-    <div>error</div>
+    <div>{error.message}</div>
   )
 }
 
-export default error
+export default errorBoundry
