@@ -22,9 +22,14 @@ const Products = () => {
             PRODUCTS LIST
         </h1>
         {
-          products.map((product,index) => (
-            <Link href={product.href} key={index} className="font-bold text-red-500 hover:text-blue-300 ">Product 0{product.serial}</Link>
-          ))
+          products.map((product,index) => {
+            if (index == 3){
+              throw new Error('error occured')
+            }else{
+              return  <Link href={product.href} key={index} className="font-bold text-red-500 hover:text-blue-300 ">Product 0{product.serial}</Link>
+            }
+            
+          })
         }
     </div>
   )
