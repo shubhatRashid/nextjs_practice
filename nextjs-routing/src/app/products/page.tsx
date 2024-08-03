@@ -10,7 +10,8 @@ type product = {
 const products : product [] = [
   {serial:1,href:'/products/01'},
   {serial:2,href:'/products/02'},
-  {serial:3,href:'/products/03'}
+  {serial:3,href:'/products/03'},
+  {serial:4,href:'not available'}
 ]
 
 const Products = () => {
@@ -24,7 +25,7 @@ const Products = () => {
         {
           products.map((product,index) => {
             if (index == 3){
-              throw new Error('error occured')
+              throw new Error('unavailable product')
             }else{
               return  <Link href={product.href} key={index} className="font-bold text-red-500 hover:text-blue-300 ">Product 0{product.serial}</Link>
             }
