@@ -24,7 +24,7 @@ const Products = () => {
         </h1>
         {
           products.map((product,index) => {
-            if (index == 3){
+            if (index == 4){
               throw new Error('unavailable product')
             }else{
               return  <Link href={product.href} key={index} className="font-bold text-red-500 hover:text-blue-300 ">Product 0{product.serial}</Link>
