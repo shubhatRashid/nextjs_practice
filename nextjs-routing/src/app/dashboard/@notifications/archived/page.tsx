@@ -1,10 +1,9 @@
 import Link from "next/link"
-
 const page = () => {
   return (
     <div>
-      <div>Notifications</div>
-      <Link href="/dashboard/archived">default nofitifications</Link>
+      <p>archived notifications</p>
+      <Link href="/dashboard">default nofitifications</Link>
     </div>
   )
 }
