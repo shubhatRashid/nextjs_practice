@@ -1,6 +1,6 @@
 const page = () => {
   return (
-    <div>images</div>
+    <div>default carousel</div>
   )
 }
 

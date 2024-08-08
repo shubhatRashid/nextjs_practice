@@ -1,24 +1,7 @@
-export default function layout (
-    {
-        children,
-        carousel,
-        Component3,
-        notifications
-    }
-        :
-    {   
-        children:React.ReactNode,
-        carousel : React.ReactNode,
-        Component3 : React.ReactNode,
-        notifications : React.ReactNode
-    }
-  )  {
+const page = () => {
   return (
-    <div>
-        <div>{children}</div>
-        <div>{carousel}</div>
-        <div>{Component3}</div>
-        <div>{notifications}</div>
-    </div>
+    <div>default Main</div>
   )
 }
+
+export default page
