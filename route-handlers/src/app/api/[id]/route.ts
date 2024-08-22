@@ -16,3 +16,15 @@ export async function PATCH(request:Request,{params}:{params:{id:string}}) {
    
 }
 
+export async function DELETE(request:Request,{params}:{params:{id:string}}) {
+    try {
+        let newdata = data.filter((eachitem)=>eachitem.id != parseInt(params.id))
+        
+        return new Response(JSON.stringify(newdata))
+
+    } catch (error) {
+        return new Response(error.message)
+    }
+   
+}
+

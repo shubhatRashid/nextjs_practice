@@ -1,7 +1,12 @@
+import { NextRequest } from "next/server"
 import data from "./data"
-export async function GET() {
+export async function GET(request:NextRequest) {
     
-    return new Response(JSON.stringify(data))
+    let searchParams = request.nextUrl.searchParams
+    let allQueries = searchParams.get('query')
+    console.log(allQueries)
+    let newData = data.filter((item) => item.description.includes(allQueries))
+    return new Response(JSON.stringify(newData))
 }
 
 export async function POST(request:Request) {
