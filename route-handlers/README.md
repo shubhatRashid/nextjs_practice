@@ -1,0 +1,1 @@
+1) Nextjs provides inbuild route handlers for creating rest api.This is done by creating a folder and a file inside called route.ts
