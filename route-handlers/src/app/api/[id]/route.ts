@@ -1,4 +1,19 @@
 import data from "../data"
+import { redirect } from "next/navigation"
+
+export async function GET(request:Request,{params}:{params:{id:string}}) {
+    try {
+        const item = data.find((eachitem)=>eachitem.id == parseInt(params.id))
+        if (item == null){
+            throw new Error('something unexpected happned')
+        }
+        return new Response(JSON.stringify(item))
+
+    } catch (error) {
+       redirect('/api')
+    }
+   
+}
 
 export async function PATCH(request:Request,{params}:{params:{id:string}}) {
     try {

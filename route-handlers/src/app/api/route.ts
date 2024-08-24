@@ -5,7 +5,7 @@ export async function GET(request:NextRequest) {
     let searchParams = request.nextUrl.searchParams
     let allQueries = searchParams.get('query')
     console.log(allQueries)
-    let newData = data.filter((item) => item.description.includes(allQueries))
+    let newData = allQueries? data.filter((item) => item.description.includes(allQueries)) : data
     return new Response(JSON.stringify(newData))
 }
 
