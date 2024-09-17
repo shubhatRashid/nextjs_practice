@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useState } from "react";
 type image = {
-    src : string,
+    src : any,
     alt : string
 }
 export default function Carousel({images}:{images:image[]}) {
@@ -33,24 +33,24 @@ export default function Carousel({images}:{images:image[]}) {
         return () => window.removeEventListener('keydown',handleKeyPress)
     },[currImageIndex])
     return (
-        <div className="relative w-screen h-screen text-white">
+        <div className="relative w-screen h-screen text-black overflow-hidden">
             <div className="absolute inset-0 w-full h-full">
-                <img  className='w-full h-full object-cover' src={images[currImageIndex].src} alt={images[currImageIndex].alt} />
+                <img  className='w-full h-full object-cover' src={images[currImageIndex].src}   alt={images[currImageIndex].alt} />
             </div>
-            <div className="absolute flex items-center justify-center bottom-5 ">
-                <button className="border rounded-xl px-3 py-1" onClick={prev}>{"<"}</button>
-                <div className="flex items-center justify-center gap-5 w-[80%]">
+            <div className="absolute h-full left-[60%] flex items-center justify-center gap-5">
                     {images.map((eachImage,index) => (
                         <button 
-                            key={index} className="w-[7%] h-[7%] rounded-xl" 
+                            key={index} className="w-[200px] h-[400px] rounded-xl" 
                             style={{border:index === currImageIndex? '2px solid white':'none'}}
                             onClick={() => handleClick(index)}
                         >
-                            <img src={eachImage.src} alt={eachImage.alt} className="rounded-xl" />
+                            <img src={eachImage.src} alt={eachImage.alt} className="rounded-xl w-full h-full object-cover" />
                         </button>
                     ))}
-                </div>
-                <button className="border rounded-xl px-3 py-1" onClick={next}>{">"}</button>
+            </div>
+            <div className="absolute flex items-center justify-center bottom-5 gap-2 w-full">
+                <button className="border rounded-xl px-3 py-1 bg-white opacity-[90%] text-xl font-bold font-serif" onClick={prev}>{"<"}</button>
+                <button className="border rounded-xl px-3 py-1 bg-white opacity-[90%] text-xl font-bold font-serif" onClick={next}>{">"}</button>
             </div>
         </div>
     );

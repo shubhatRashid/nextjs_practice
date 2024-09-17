@@ -1,20 +1,21 @@
+import { galaticnight,guana,space } from "../../assets";
 type image = {
-    src : string,
+    src : any,
     alt : string
 }
 
 const images : image[] = [
     {
-      src: 'https://picsum.photos/id/600/600/400',
-      alt: 'Forest',
+      src: galaticnight.src,
+      alt: 'GalaticNight',
     },
     {
-      src: 'https://picsum.photos/id/100/600/400',
-      alt: 'Beach',
+      src: guana.src,
+      alt: 'Guana',
     },
     {
-      src: 'https://picsum.photos/id/200/600/400',
-      alt: 'Yak',
+      src: space.src,
+      alt: 'space',
     },
     {
       src: 'https://picsum.photos/id/300/600/400',
