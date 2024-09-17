@@ -12,6 +12,9 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      animation : {
+        'once' : 'ping 1s cubic-bezier(0, 0, 0.2, 1) 1'
+      }
     },
   },
   plugins: [],

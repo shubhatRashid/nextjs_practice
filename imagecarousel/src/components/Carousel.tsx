@@ -8,18 +8,13 @@ type image = {
 }
 export default function Carousel({images}:{images:image[]}) {
     const [currImageIndex,setCurrImageIndex] = useState(0)
-    const [allImages,setAllImages] = useState(images)
 
     const next = () => {
-        let currImage = allImages[currImageIndex]
-        currImageIndex+1 < allImages.length ? setCurrImageIndex(currImageIndex+1) : setCurrImageIndex(0)
-        setAllImages((images) => images.slice(1,images.length))
-        setAllImages((images) => [...images,currImage])
-        setCurrImageIndex(0)
-        
+        currImageIndex+1 < images.length ? setCurrImageIndex(currImageIndex+1) : setCurrImageIndex(0)
     }
     const prev = () => {
         currImageIndex-1 > -1 ? setCurrImageIndex(currImageIndex-1) : setCurrImageIndex(images.length-1)
+
         
     }
     const handleClick = (index:number) => {
@@ -39,25 +34,26 @@ export default function Carousel({images}:{images:image[]}) {
         window.addEventListener('keydown',handleKeyPress)
 
         return () => window.removeEventListener('keydown',handleKeyPress)
-    },[allImages,currImageIndex])
+    },[images,currImageIndex])
     return (
         <div className="relative w-screen h-screen text-black overflow-hidden">
             <div className="absolute inset-0 w-full h-full">
-                <Image priority fill style={{objectFit:'cover'}} src={allImages[currImageIndex].src}   alt={allImages[currImageIndex].alt} />
+                <Image priority fill style={{objectFit:'cover'}} src={images[currImageIndex].src}   alt={images[currImageIndex].alt} />
                 <div 
                     className="absolute text-gray-100 font-serif top-[35%] right-[60%] left-[10%] 
                                border rounded-xl p-5 bg-black  opacity-[25%] hover:opacity-[100%] 
                                cursor-pointer"
                 >
-                    <h1 className="capitalize text-xl font-bold">{allImages[currImageIndex].alt}</h1>
-                    <span className="">{allImages[currImageIndex].description}</span>
+                    <h1 className="capitalize text-xl font-bold">{images[currImageIndex].alt}</h1>
+                    <span className="">{images[currImageIndex].description}</span>
                 </div>
             </div>
             <div className="absolute h-full left-[60%] flex items-center justify-center gap-5">
-                    {allImages.map((eachImage,index) => (
+                    {images.map((eachImage,index) => (
                         <button 
                             id="thumbnail"
-                            key={index} className="relative w-[150px] h-[250px] rounded-xl" 
+                            key={index} 
+                            className={`relative w-[150px] h-[250px] rounded-xl ${index === currImageIndex && 'animate-once'}`} 
                             style={{border:index === currImageIndex? '2px solid white':'none',
                                     height:index === currImageIndex? '320px' : '250px',
                                     width:index === currImageIndex? '220px': "150px"
