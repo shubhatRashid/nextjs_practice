@@ -17,18 +17,7 @@ const images : image[] = [
       src: space.src,
       alt: 'space',
     },
-    {
-      src: 'https://picsum.photos/id/300/600/400',
-      alt: 'Hay',
-    },
-    {
-      src: 'https://picsum.photos/id/400/600/400',
-      alt: 'Plants',
-    },
-    {
-      src: 'https://picsum.photos/id/500/600/400',
-      alt: 'Building',
-    },
+    
   ];
 
   export default images
