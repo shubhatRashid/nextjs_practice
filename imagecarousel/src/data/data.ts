@@ -1,11 +1,11 @@
-import { galaticnight,guana,space,gaming,computer } from "../../assets";
+import { galaticnight,guana,space,gaming,computer,mountain,cactus,landscape } from "../../assets";
 type image = {
     src : {},
     alt : string,
     description : string
 }
 
-const images : image[] = [
+const images: image[] = [
   {
     src: galaticnight.src,
     alt: 'GalaticNight',
@@ -30,7 +30,23 @@ const images : image[] = [
     src: computer.src,
     alt: 'computer',
     description: 'A sleek and modern computer setup, highlighting the latest technology in computing. The image features a stylish monitor, keyboard, and other peripherals, emphasizing both functionality and design. It represents the cutting-edge advancements in digital technology and computing power.'
+  },
+  {
+    src: mountain.src,
+    alt: 'Mountain',
+    description: 'A breathtaking view of towering mountain peaks bathed in the golden light of dawn. The rugged terrain and snow-capped summits create a dramatic landscape, showcasing the majesty of nature. This image conveys a sense of tranquility and awe-inspiring grandeur, perfect for nature enthusiasts.'
+  },
+  {
+    src: cactus.src,
+    alt: 'Cactus',
+    description: 'A vibrant close-up of a resilient cactus plant thriving in its arid desert environment. The image highlights the unique textures and patterns of the cactus spines, set against a backdrop of sun-drenched sand. It captures the stark beauty and adaptability of desert flora.'
+  },
+  {
+    src: landscape.src,
+    alt: 'Landscape',
+    description: 'A picturesque landscape featuring rolling hills, lush greenery, and a serene river winding through the scene. The image captures the essence of natural beauty with its vibrant colors and peaceful atmosphere, offering a tranquil escape into the idyllic countryside.'
   }
 ];
+
 
   export default images
