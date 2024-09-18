@@ -65,9 +65,13 @@ export default function Carousel({ images }: { images: ImageType[] }) {
     },[currImageIndex])
     return (
         <div className="relative w-screen h-screen text-black overflow-hidden">
-            
+
             {/* Main image display */}
-            <div className="absolute inset-0 w-full h-full">
+            <div 
+                id='mainImage' 
+                className="absolute inset-0 w-full h-full"
+                style={{animation :descrip? 'zoomOut 1s ease' : ''}}
+                >
 
                 {/* Display the current image with cover styling */}
                 <Image 

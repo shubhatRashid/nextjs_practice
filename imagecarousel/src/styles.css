@@ -2,11 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-
+body{
+    background-color: black;
+}
 @keyframes slide {
     from{
         transform: translateY(-1000px);
+        opacity: 0%;
     }to{
         transform: translateY(0px);
+        opacity: 90%;
+    }
+}
+
+@keyframes zoomOut {
+    from{
+        transform: scale(0.95);
+    }to{
+        transform: scale(1);
     }
 }
