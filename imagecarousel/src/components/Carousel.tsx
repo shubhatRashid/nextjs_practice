@@ -4,7 +4,7 @@ import Image, { StaticImageData } from "next/image";
 
 // Define a type for the image data structure
 type ImageType = {
-    src: string | StaticImageData, // Adjusted to ensure it works with next/image
+    src: StaticImageData, // Adjusted to ensure it works with next/image
     alt: string,
     description: string
 }
