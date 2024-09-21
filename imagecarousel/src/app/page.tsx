@@ -1,8 +1,8 @@
-import Carousel from "@/components/Carousel";
+import NewCarousel from "@/components/NewCarousel";
 import images from "@/data/data";
 
 export default function Page() {
     return (
-            <Carousel images = {images}/>
+            <NewCarousel images = {images}/>
     );
 }
