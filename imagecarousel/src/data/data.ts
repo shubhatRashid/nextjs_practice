@@ -1,7 +1,6 @@
-import { StaticImageData } from "next/image";
 import { galaticnight,guana,space,gaming,computer,mountain,cactus,landscape } from "../../assets";
 type image = {
-    src : StaticImageData,
+    src : string,
     alt : string,
     description : string
 }

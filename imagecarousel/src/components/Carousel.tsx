@@ -1,10 +1,10 @@
 'use client';
 import { useEffect, useState } from "react";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 
 // Define a type for the image data structure
 type ImageType = {
-    src: StaticImageData, // Adjusted to ensure it works with next/image
+    src: string, // Adjusted to ensure it works with next/image
     alt: string,
     description: string
 }
