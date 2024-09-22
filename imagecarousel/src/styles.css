@@ -7,7 +7,7 @@ body{
 }
 @keyframes slide {
     from{
-        transform: translateY(-1000px);
+        transform: translateY(-100px);
         opacity: 0%;
     }to{
         transform: translateY(0px);
@@ -23,7 +23,7 @@ body{
     }
 }
 
-@keyframes zoom {
+@keyframes scaleUp {
     0%{
         width: 200px;
         height: 300px;
@@ -35,11 +35,13 @@ body{
     }
 }
 
-@keyframes slide {
-    from{
-        transform: translateX(calc(var(--index)*220px));
+@keyframes scaleDown {
+    0%{
+        width: 100%;
+        height: 100%;
     }
-    to{
-        transform: translateX(calc(var(--index)*220px - 220px));
+    100%{
+        width: 200px;
+        height: 300px;
     }
 }
