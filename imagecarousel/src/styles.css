@@ -34,3 +34,12 @@ body{
         transform: translateX(0);
     }
 }
+
+@keyframes slide {
+    from{
+        transform: translateX(calc(var(--index)*220px));
+    }
+    to{
+        transform: translateX(calc(var(--index)*220px - 220px));
+    }
+}

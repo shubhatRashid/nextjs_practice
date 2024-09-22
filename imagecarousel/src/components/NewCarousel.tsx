@@ -14,15 +14,14 @@ type image = {
         const [change,setChange] = useState(false)
 
         const next = () => {
-            setCurrent((curr) => (curr < allImages.length - 1 ? curr + 1 : curr)); // Loop stays within bounds
-            setChange(true);
+            setCurrent((curr) => (curr < allImages.length - 1 ? curr + 1 : curr)); 
+            setChange(true)
         }
         
         const prev = () => {
-            setCurrent((curr) => (curr > 0 ? curr - 1 : curr)); // Loop stays within bounds
-            setChange(true);
+            setCurrent((curr) => (curr > 0 ? curr - 1 : curr))
+            setChange(true)
         }
-        
 
          const handleKeyDown = (event: KeyboardEvent) => {
             if (event.key === 'ArrowRight') next();
@@ -38,16 +37,17 @@ type image = {
         },[change])
 
         return (
-            <div className="relative flex justify-start items-center gap-10 h-screen w-[100%] overflow-hidden">
+            <div className="relative flex justify-center items-center gap-10 h-screen w-[100%] overflow-hidden">
                 {
                     allImages.map((eachimage,index) => (
                             <div 
-                                id="image"
+                                id={`${index}`}
                                 key={index} 
-                                className="absolute rounded-lg w-[200px] h-[300px]"
+                                className="absolute rounded-lg w-[200px] h-[300px] z-100"
                                 style={{
+                                    '--index':index,
                                     transform: `translateX(${(index)*220}px)`,
-                                    animation:(index === current && !change) ? 'zoom 1s forwards':'none',
+                                    animation:(index === current) ? 'zoom 1s forwards':'slide 2s forwards',
                                 }}
                                 >
                             <Image
