@@ -9,16 +9,16 @@ type image = {
     description : string
 }
 
-    export default function NewCarousel({images}:{images:image[]}) {
+    export default function ModernCarousel({images}:{images:image[]}) {
         const [allImages,setAllImages] = useState(images)
         const [current,setCurrent] = useState(0)
 
         const next = () => {
-            setCurrent((curr) => (curr < allImages.length - 1 ? curr + 1 : curr));
+            setCurrent((curr) => (curr < allImages.length - 1 ? curr + 1 : 0));
         }
         
         const prev = () => {
-            setCurrent((curr) => (curr > 0 ? curr - 1 : curr)); 
+            setCurrent((curr) => (curr > 0 ? curr - 1 : allImages.length -1)); 
         }
         
 
@@ -31,6 +31,13 @@ type image = {
             return () => window.removeEventListener('keydown',handleKeyDown)
         },[current,allImages])
 
+        useEffect(() => {
+            const interval = setInterval(() => {
+                next();
+            }, 3000);
+    
+            return () => clearInterval(interval); // Clear the interval when component is unmounted
+        }, [current]); // Ensure the interval resets if `currImageIndex` changes
         return (
             <div 
                 className="relative flex justify-center items-center gap-10 h-screen w-[100%] overflow-hidden"

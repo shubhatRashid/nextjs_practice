@@ -10,7 +10,7 @@ type ImageType = {
 }
 
 // Carousel component that takes an array of images
-export default function Carousel({ images }: { images: ImageType[] }) {
+export default function ThreeDCarousel({ images }: { images: ImageType[] }) {
     const [currImageIndex, setCurrImageIndex] = useState(0); // State to track the current image index
     const [descrip,setDescrip] = useState(false) // State used to animate description of image on change
 
@@ -102,7 +102,7 @@ export default function Carousel({ images }: { images: ImageType[] }) {
                     className="relative flex items-center justify-center gap-5"
                     style={{
                         transformStyle: "preserve-3d", // Ensures that child elements maintain their 3D transforms
-                        transform: `rotateY(${currImageIndex * -Math.round(360 / images.length)}deg)`, // Rotate based on the current image index
+                        transform: ` rotateY(${currImageIndex * -Math.round(360 / images.length)}deg)`, // Rotate based on the current image index
                         transition: "transform 1s ease", // Smooth transition between image changes
                     }}
                 >
